@@ -14,7 +14,7 @@ else
     # Set the default compat data path here (where all the wine prefixes are).
     # You only need to override this on a per-game basis if you install your
     # games on different drives.
-    compat_data_path="$HOME/.steam/debian-installation/steamapps/compatdata/"
+    compat_data_path="$HOME/.steam/debian-installation/steamapps/compatdata"
     # Default delay so the script can launc the game itself, defined here so it
     # can be manually adjusted if a game takes a while to start
     delay=20 # 20 seconds
