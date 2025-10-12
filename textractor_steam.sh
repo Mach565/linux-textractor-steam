@@ -15,6 +15,9 @@ else
     # You only need to override this on a per-game basis if you install your
     # games on different drives.
     compat_data_path="$HOME/.steam/debian-installation/steamapps/compatdata/"
+    # Default delay so the script can launc the game itself, defined here so it
+    # can be manually adjusted if a game takes a while to start
+    delay=20 # 20 seconds
     case "$1" in
     	# If a different version of Proton/Textractor/Compat data path is needed,
     	# make sure to include the appid in the match too,
@@ -39,5 +42,7 @@ else
     export STEAM_COMPAT_DATA_PATH="$compat_data_path/$appid"
     export WINEPREFIX="$STEAM_COMPAT_DATA_PATH/pfx"
     cmd=("$proton" runinprefix "$textractor")    
+    steam -applaunch $appid
+    sleep $delay
     "${cmd[@]}"
 fi
