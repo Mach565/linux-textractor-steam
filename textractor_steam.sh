@@ -15,8 +15,13 @@ else
     # You only need to override this on a per-game basis if you install your
     # games on different drives.
     compat_data_path="$HOME/.steam/debian-installation/steamapps/compatdata"
-    # Default delay so the script can launc the game itself, defined here so it
+    # Default delay so the script can launch the game itself, defined here so it
     # can be manually adjusted if a game takes a while to start
+
+    # Manually override the sleep duration per launch
+    if [[ ! -z $2 ]]; then
+		delay=$2 # Ok if its not a number, equal to sleep 0
+	fi
     delay=20 # 20 seconds
     case "$1" in
     	# If a different version of Proton/Textractor/Compat data path is needed,
