@@ -9,7 +9,7 @@ else
     # Set the default Proton and Textractor here. Typically the latest Proton
     # and the 32 bit version Textractor.
     # You can override it for a specific app if needed.
-    proton="$HOME/.steam/debian-installation/steamapps/common/Proton 9.0 (Beta)"
+    proton="$HOME/.steam/debian-installation/steamapps/common/Proton 10.0/proton"
     textractor="/path/to/default/textractor"
     # Set the default compat data path here (where all the wine prefixes are).
     # You only need to override this on a per-game basis if you install your
@@ -42,7 +42,7 @@ else
     esac
 	# Manually override the sleep duration per launch
     if [[ ! -z $2 ]]; then
-		delay=$2 # Ok if its not a number, equal to sleep 0
+		delay=$2 # Ok if it's not a number, equal to sleep 0
 	fi
     # compat data
     export STEAM_COMPAT_DATA_PATH="$compat_data_path/$appid"
