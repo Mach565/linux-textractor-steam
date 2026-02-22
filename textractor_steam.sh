@@ -18,10 +18,6 @@ else
     # Default delay so the script can launch the game itself, defined here so it
     # can be manually adjusted if a game takes a while to start
 
-    # Manually override the sleep duration per launch
-    if [[ ! -z $2 ]]; then
-		delay=$2 # Ok if its not a number, equal to sleep 0
-	fi
     delay=20 # 20 seconds
     case "$1" in
     	# If a different version of Proton/Textractor/Compat data path is needed,
@@ -32,6 +28,7 @@ else
             # Example of how to override
             proton="$HOME/.steam/debian-installation/steamapps/common/Proton - Experimental"
     		textractor="/path/to/other/textractor"
+			delay=10
             
         ;;
         # Use whatever name works for you, no need to type the full name out
@@ -43,6 +40,10 @@ else
             appid="$1"
         ;;
     esac
+	# Manually override the sleep duration per launch
+    if [[ ! -z $2 ]]; then
+		delay=$2 # Ok if its not a number, equal to sleep 0
+	fi
     # compat data
     export STEAM_COMPAT_DATA_PATH="$compat_data_path/$appid"
     export WINEPREFIX="$STEAM_COMPAT_DATA_PATH/pfx"
