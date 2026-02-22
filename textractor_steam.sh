@@ -34,7 +34,7 @@ else
         # Use whatever name works for you, no need to type the full name out
         "Higurashi 1")
         	appid="310360"
-        ::
+        ;;
         # If no other matches, fall back on using the App ID.
         *)
             appid="$1"
